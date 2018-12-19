@@ -54423,3 +54423,302 @@ Migrating to CreateUsers (20181218015238)
   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:14
   [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2018-12-19 13:07:42 -0600
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (4.7ms)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/babynames/1" for 127.0.0.1 at 2018-12-19 13:07:53 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/babynames/1"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/babynames" for 127.0.0.1 at 2018-12-19 13:08:00 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/babynames"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (12.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (302.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "babynames_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (326.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "babynames_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (737.2ms)[0m  [1m[35mCREATE DATABASE "babynames_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (587.2ms)[0m  [1m[35mCREATE DATABASE "babynames_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (47.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (62.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2893828008654712920)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLists (20181217192807)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (37.9ms)[0m  [1m[35mCREATE TABLE "lists" ("id" bigserial primary key, "list_name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181217192807_create_lists.rb:3
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_lists_on_list_name" ON "lists"  ("list_name")[0m
+  ↳ db/migrate/20181217192807_create_lists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181217192807"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateNames (20181217194458)
+  [1m[35m (11.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (46.2ms)[0m  [1m[35mCREATE TABLE "names" ("id" bigserial primary key, "baby_name" character varying NOT NULL, "list_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181217194458_create_names.rb:3
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_names_on_list_id" ON "names"  ("list_id")[0m
+  ↳ db/migrate/20181217194458_create_names.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181217194458"]]
+  ↳ bin/rails:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181218015238)
+  [1m[35m (15.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (39.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "user_name" character varying NOT NULL, "recently_viewed_list" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181218015238_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181218015238"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-19 19:08:35.831905"], ["updated_at", "2018-12-19 19:08:35.831905"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2893828008654712920)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mList Create (26.9ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list_name", "List one"], ["created_at", "2018-12-19 19:08:42.649582"], ["updated_at", "2018-12-19 19:08:42.649582"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list_name", "List two"], ["created_at", "2018-12-19 19:08:42.679962"], ["updated_at", "2018-12-19 19:08:42.679962"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list_name", "List three"], ["created_at", "2018-12-19 19:08:42.684852"], ["updated_at", "2018-12-19 19:08:42.684852"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (12.8ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "recently_viewed_list", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_name", "User One"], ["recently_viewed_list", 1], ["created_at", "2018-12-19 19:08:42.705247"], ["updated_at", "2018-12-19 19:08:42.705247"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "recently_viewed_list", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_name", "User Two"], ["recently_viewed_list", 1], ["created_at", "2018-12-19 19:08:42.727354"], ["updated_at", "2018-12-19 19:08:42.727354"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "recently_viewed_list", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_name", "User Three"], ["recently_viewed_list", 1], ["created_at", "2018-12-19 19:08:42.738317"], ["updated_at", "2018-12-19 19:08:42.738317"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+Started GET "/babynames" for 127.0.0.1 at 2018-12-19 13:09:01 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/babynames"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-12-19 13:09:01 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/babynames/1" for 127.0.0.1 at 2018-12-19 13:09:12 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/babynames/1"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-12-19 13:09:24 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 32ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/babynames" for 127.0.0.1 at 2018-12-19 13:10:16 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/babynames"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/lists/" for 127.0.0.1 at 2018-12-19 13:12:04 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ListsController#index as HTML
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:7
+Completed 200 OK in 32ms (Views: 13.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-19 13:12:10 -0600
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 5.3ms)
+
+
