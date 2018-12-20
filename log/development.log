@@ -55207,3 +55207,153 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 74ms (Views: 21.2ms | ActiveRecord: 50.0ms)
 
 
+  [1m[36mName Load (3.3ms)[0m  [1m[34mSELECT  "names".* FROM "names" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (14.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (362.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "babynames_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (386.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "babynames_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (774.1ms)[0m  [1m[35mCREATE DATABASE "babynames_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (680.1ms)[0m  [1m[35mCREATE DATABASE "babynames_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (40.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2893828008654712920)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLists (20181217192807)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (34.6ms)[0m  [1m[35mCREATE TABLE "lists" ("id" bigserial primary key, "list_name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181217192807_create_lists.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_lists_on_list_name" ON "lists"  ("list_name")[0m
+  ↳ db/migrate/20181217192807_create_lists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181217192807"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateNames (20181217194458)
+  [1m[35m (9.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "names" ("id" bigserial primary key, "baby_name" character varying NOT NULL, "list_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181217194458_create_names.rb:3
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX  "index_names_on_list_id" ON "names"  ("list_id")[0m
+  ↳ db/migrate/20181217194458_create_names.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181217194458"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181218015238)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "user_name" character varying NOT NULL, "recently_viewed_list" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181218015238_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181218015238"]]
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-20 18:49:50.204492"], ["updated_at", "2018-12-20 18:49:50.204492"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2893828008654712920)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mList Create (43.3ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list_name", "List one"], ["created_at", "2018-12-20 18:49:58.254042"], ["updated_at", "2018-12-20 18:49:58.254042"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list_name", "List two"], ["created_at", "2018-12-20 18:49:58.301004"], ["updated_at", "2018-12-20 18:49:58.301004"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mList Create (0.4ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list_name", "List three"], ["created_at", "2018-12-20 18:49:58.305931"], ["updated_at", "2018-12-20 18:49:58.305931"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mName Create (24.5ms)[0m  [1m[32mINSERT INTO "names" ("baby_name", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["baby_name", "Sarah"], ["list_id", 1], ["created_at", "2018-12-20 18:49:58.342749"], ["updated_at", "2018-12-20 18:49:58.342749"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mName Create (0.7ms)[0m  [1m[32mINSERT INTO "names" ("baby_name", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["baby_name", "Susan"], ["list_id", 2], ["created_at", "2018-12-20 18:49:58.372384"], ["updated_at", "2018-12-20 18:49:58.372384"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mName Create (0.4ms)[0m  [1m[32mINSERT INTO "names" ("baby_name", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["baby_name", "Sam"], ["list_id", 3], ["created_at", "2018-12-20 18:49:58.378099"], ["updated_at", "2018-12-20 18:49:58.378099"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (13.6ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "recently_viewed_list", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_name", "User One"], ["recently_viewed_list", 1], ["created_at", "2018-12-20 18:49:58.391807"], ["updated_at", "2018-12-20 18:49:58.391807"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "recently_viewed_list", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_name", "User Two"], ["recently_viewed_list", 1], ["created_at", "2018-12-20 18:49:58.409237"], ["updated_at", "2018-12-20 18:49:58.409237"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "recently_viewed_list", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_name", "User Three"], ["recently_viewed_list", 1], ["created_at", "2018-12-20 18:49:58.413461"], ["updated_at", "2018-12-20 18:49:58.413461"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+Started GET "/" for ::1 at 2018-12-20 12:50:17 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 22ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-12-20 12:50:23 -0600
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+Completed 200 OK in 28ms (Views: 16.4ms | ActiveRecord: 7.6ms)
+
+
