@@ -54840,3 +54840,312 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 24ms (Views: 12.8ms | ActiveRecord: 8.5ms)
 
 
+Started POST "/api/v1/lists/1/names" for ::1 at 2018-12-19 13:31:10 -0600
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/krestko/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::NamesController#create as */*
+  Parameters: {"baby_name"=>"a", "list_id"=>"1", "name"=>{"baby_name"=>"a"}}
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+Unpermitted parameters: :list_id, :name
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/names_controller.rb:17
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:17
+  [1m[36mName Create (75.1ms)[0m  [1m[32mINSERT INTO "names" ("baby_name", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["baby_name", "a"], ["list_id", 1], ["created_at", "2018-12-19 19:31:10.391797"], ["updated_at", "2018-12-19 19:31:10.391797"]]
+  ↳ app/controllers/api/v1/names_controller.rb:17
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/names_controller.rb:17
+Completed 201 Created in 131ms (Views: 1.6ms | ActiveRecord: 97.9ms)
+
+
+Started GET "/api/v1/lists/1/names" for ::1 at 2018-12-19 13:31:10 -0600
+Processing by Api::V1::NamesController#index as */*
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+  [1m[36mName Load (0.4ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."list_id" = $1[0m  [["list_id", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:8
+Completed 200 OK in 10ms (Views: 2.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/lists" for ::1 at 2018-12-19 13:31:23 -0600
+Processing by Api::V1::ListsController#index as */*
+Started GET "/api/v1/lists/1" for ::1 at 2018-12-19 13:31:23 -0600
+Started GET "/api/v1/lists/1/names" for ::1 at 2018-12-19 13:31:23 -0600
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:7
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/api/v1/users/1" for ::1 at 2018-12-19 13:31:23 -0600
+Processing by Api::V1::NamesController#index as */*
+Processing by Api::V1::ListsController#show as */*
+  Parameters: {"list_id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (6.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+  [1m[36mList Load (8.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lists_controller.rb:47
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"recently_viewed_list"=>"1", "id"=>"1", "user"=>{"recently_viewed_list"=>"1"}}
+  [1m[36mName Load (1.6ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."list_id" = $1[0m  [["list_id", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:8
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:29
+Unpermitted parameters: :id, :user
+Completed 200 OK in 39ms (Views: 2.9ms | ActiveRecord: 33.9ms)
+
+
+Completed 200 OK in 40ms (Views: 0.9ms | ActiveRecord: 36.4ms)
+
+
+Started GET "/api/v1/lists/1/names" for ::1 at 2018-12-19 13:31:24 -0600
+  [1m[35m (12.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 38ms (Views: 0.6ms | ActiveRecord: 27.4ms)
+
+
+Processing by Api::V1::NamesController#index as */*
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+  [1m[36mName Load (1.0ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."list_id" = $1[0m  [["list_id", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:8
+Completed 200 OK in 10ms (Views: 2.9ms | ActiveRecord: 5.7ms)
+
+
+Started PATCH "/api/v1/users/1" for ::1 at 2018-12-19 13:31:28 -0600
+Started GET "/api/v1/lists/1" for ::1 at 2018-12-19 13:31:28 -0600
+Started GET "/api/v1/lists" for ::1 at 2018-12-19 13:31:28 -0600
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"recently_viewed_list"=>"1", "id"=>"1", "user"=>{"recently_viewed_list"=>"1"}}
+Started GET "/api/v1/lists/1/names" for ::1 at 2018-12-19 13:31:28 -0600
+Processing by Api::V1::ListsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:29
+Processing by Api::V1::ListsController#index as */*
+  [1m[36mList Load (5.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:7
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 5.1ms)
+
+
+  [1m[36mList Load (24.9ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lists_controller.rb:47
+Completed 200 OK in 28ms (Views: 0.8ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/api/v1/lists/2/names" for ::1 at 2018-12-19 13:31:28 -0600
+Unpermitted parameters: :id, :user
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 66ms (Views: 0.9ms | ActiveRecord: 58.9ms)
+
+
+Processing by Api::V1::NamesController#index as */*
+  Parameters: {"list_id"=>"2"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+  [1m[36mName Load (0.8ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/controllers/api/v1/names_controller.rb:8
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 1.2ms)
+
+
+Processing by Api::V1::NamesController#index as */*
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+  [1m[36mName Load (1.8ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."list_id" = $1[0m  [["list_id", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:8
+Completed 200 OK in 18ms (Views: 2.4ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/api/v1/lists" for ::1 at 2018-12-19 13:31:30 -0600
+Started GET "/api/v1/users/1" for ::1 at 2018-12-19 13:31:30 -0600
+Processing by Api::V1::ListsController#index as */*
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:29
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mList Load (8.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:7
+Completed 200 OK in 13ms (Views: 4.2ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/api/v1/lists" for ::1 at 2018-12-19 13:31:37 -0600
+Started GET "/api/v1/users" for ::1 at 2018-12-19 13:31:37 -0600
+Processing by Api::V1::ListsController#index as */*
+  [1m[36mList Load (4.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:7
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 4.4ms)
+
+
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/lists/2/names" for ::1 at 2018-12-19 13:31:37 -0600
+Processing by Api::V1::NamesController#index as */*
+  Parameters: {"list_id"=>"2"}
+  [1m[36mList Load (6.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+  [1m[36mName Load (3.1ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."list_id" = $1[0m  [["list_id", 2]]
+  ↳ app/controllers/api/v1/names_controller.rb:8
+Completed 200 OK in 13ms (Views: 1.9ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/api/v1/lists" for ::1 at 2018-12-19 13:31:54 -0600
+Started GET "/api/v1/users/1" for ::1 at 2018-12-19 13:31:54 -0600
+Processing by Api::V1::ListsController#index as */*
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:7
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:29
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/api/v1/lists" for ::1 at 2018-12-19 13:32:51 -0600
+Processing by Api::V1::ListsController#create as */*
+  Parameters: {"list_name"=>"BabyNames12345", "list"=>{"list_name"=>"BabyNames12345"}}
+Unpermitted parameter: :list
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:20
+  [1m[36mList Create (1.0ms)[0m  [1m[32mINSERT INTO "lists" ("list_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["list_name", "BabyNames12345"], ["created_at", "2018-12-19 19:32:51.574629"], ["updated_at", "2018-12-19 19:32:51.574629"]]
+  ↳ app/controllers/api/v1/lists_controller.rb:20
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:20
+Completed 201 Created in 15ms (Views: 1.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/api/v1/lists" for ::1 at 2018-12-19 13:32:51 -0600
+Processing by Api::V1::ListsController#index as */*
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/api/v1/users/1" for ::1 at 2018-12-19 13:32:51 -0600
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"recently_viewed_list"=>"4", "id"=>"1", "user"=>{"recently_viewed_list"=>"4"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:29
+Unpermitted parameters: :id, :user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Started GET "/api/v1/lists/4/names" for ::1 at 2018-12-19 13:32:51 -0600
+Started GET "/api/v1/lists/4" for ::1 at 2018-12-19 13:32:51 -0600
+Processing by Api::V1::NamesController#index as */*
+  Parameters: {"list_id"=>"4"}
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+  [1m[36mUser Update (8.9ms)[0m  [1m[33mUPDATE "users" SET "recently_viewed_list" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["recently_viewed_list", 4], ["updated_at", "2018-12-19 19:32:51.621084"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Processing by Api::V1::ListsController#show as */*
+  [1m[36mName Load (2.3ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."list_id" = $1[0m  [["list_id", 4]]
+  Parameters: {"id"=>"4"}
+  ↳ app/controllers/api/v1/names_controller.rb:8
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mList Load (1.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lists_controller.rb:47
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 41ms (Views: 0.7ms | ActiveRecord: 17.1ms)
+
+
+Started POST "/api/v1/lists/4/names" for ::1 at 2018-12-19 13:32:57 -0600
+Processing by Api::V1::NamesController#create as */*
+  Parameters: {"baby_name"=>"B", "list_id"=>"4", "name"=>{"baby_name"=>"B"}}
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+Unpermitted parameters: :list_id, :name
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/names_controller.rb:17
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:17
+  [1m[36mName Create (0.8ms)[0m  [1m[32mINSERT INTO "names" ("baby_name", "list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["baby_name", "B"], ["list_id", 4], ["created_at", "2018-12-19 19:32:57.911717"], ["updated_at", "2018-12-19 19:32:57.911717"]]
+  ↳ app/controllers/api/v1/names_controller.rb:17
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/names_controller.rb:17
+Completed 201 Created in 19ms (Views: 1.0ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/api/v1/lists/4/names" for ::1 at 2018-12-19 13:32:57 -0600
+Processing by Api::V1::NamesController#index as */*
+  Parameters: {"list_id"=>"4"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+  [1m[36mName Load (0.3ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."list_id" = $1[0m  [["list_id", 4]]
+  ↳ app/controllers/api/v1/names_controller.rb:8
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/lists" for ::1 at 2018-12-19 13:33:08 -0600
+Processing by Api::V1::ListsController#index as */*
+Started GET "/api/v1/users/1" for ::1 at 2018-12-19 13:33:08 -0600
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:7
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.6ms)
+
+
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:29
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/lists" for ::1 at 2018-12-19 13:33:08 -0600
+Started GET "/api/v1/users/1" for ::1 at 2018-12-19 13:33:08 -0600
+Started GET "/api/v1/lists/undefined/names" for ::1 at 2018-12-19 13:33:08 -0600
+Processing by Api::V1::ListsController#index as */*
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:29
+Processing by Api::V1::NamesController#index as */*
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+  Parameters: {"list_id"=>"undefined"}
+  [1m[36mList Load (12.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" ORDER BY "lists"."id" ASC[0m
+  ↳ app/controllers/api/v1/lists_controller.rb:7
+Completed 200 OK in 16ms (Views: 2.7ms | ActiveRecord: 12.7ms)
+
+
+  [1m[36mList Load (6.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/names_controller.rb:35
+Completed 404 Not Found in 9ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/api/v1/lists/4" for ::1 at 2018-12-19 13:33:08 -0600
+  
+ActiveRecord::RecordNotFound (Couldn't find List with 'id'=undefined):
+  
+app/controllers/api/v1/names_controller.rb:35:in `get_list'
+Processing by Api::V1::ListsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lists_controller.rb:47
+Completed 200 OK in 26ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
