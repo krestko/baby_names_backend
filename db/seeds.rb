@@ -9,6 +9,10 @@ List.create!(list_name: 'List one')
 List.create!(list_name: 'List two')
 List.create!(list_name: 'List three')
 
+Name.create!(baby_name: 'Sarah', list_id: 1)
+Name.create!(baby_name: 'Susan', list_id: 2)
+Name.create!(baby_name: 'Sam', list_id: 3)
+
 User.create!(user_name: 'User One', recently_viewed_list: 1)
 User.create!(user_name: 'User Two', recently_viewed_list: 1)
 User.create!(user_name: 'User Three', recently_viewed_list: 1)
