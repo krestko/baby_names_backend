@@ -5,17 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-List.create!(list_name: 'List one')
-List.create!(list_name: 'List two')
-List.create!(list_name: 'List three')
+List.create!(list_name: 's9f6d9j3d1s9')
+Name.create!(baby_name: 'hi', crossed_out: 'false', list_id: 1)
 
-Name.create!(baby_name: 'Sarah', list_id: 1)
-Name.create!(baby_name: 'Susan', list_id: 2)
-Name.create!(baby_name: 'Sam', list_id: 3)
 
-User.create!(user_name: 'User One', recently_viewed_list: 1)
-User.create!(user_name: 'User Two', recently_viewed_list: 1)
-User.create!(user_name: 'User Three', recently_viewed_list: 1)
+
 
 
 

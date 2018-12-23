@@ -40,7 +40,7 @@ module Api::V1
       end
   
       def name_params
-        params.permit(:baby_name).merge(list_id: params[:list_id].to_i)
+        params.permit(:baby_name, :crossed_out).merge(list_id: params[:list_id].to_i)
       end
   end
   end
